@@ -8,6 +8,3 @@
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.charger.enable_suspend=true
 
-# Default to BFQ I/O scheduler
-PRODUCT_PRODUCT_PROPERTIES += \
-    persist.sys.io.scheduler=bfq
