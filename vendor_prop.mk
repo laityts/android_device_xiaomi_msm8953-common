@@ -67,6 +67,7 @@ persist.camera.isp.clock.optmz=0 \
 persist.camera.isp.debug=0 \
 persist.camera.sensor.debug=0 \
 persist.camera.stats.test=5 \
+persist.vendor.qti.telephony.vt_cam_interface=1 \
 vidc.enc.dcvs.extra-buff-count=2
 
 # Cne
