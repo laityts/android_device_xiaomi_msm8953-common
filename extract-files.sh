@@ -66,7 +66,7 @@ fi
 
 DEVICE_BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
-if [ "$DEVICE" = "tissot" ]; then
+if [ "$DEVICE" = "tiffany" ] || [ "$DEVICE" = "tissot" ]; then
 patchelf --remove-needed libbacktrace.so "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/gf_fingerprint.default.so
 patchelf --remove-needed libunwind.so "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/gf_fingerprint.default.so
 patchelf --remove-needed libkeystore_binder.so "$DEVICE_BLOB_ROOT"/vendor/lib64/hw/gf_fingerprint.default.so
@@ -97,7 +97,7 @@ patchelf --remove-needed libkeymaster_messages.so "$DEVICE_BLOB_ROOT"/vendor/lib
 
 fi
 
-if [ "$DEVICE" = "mido" ] || [ "$DEVICE" = "tissot" ]; then
+if [ "$DEVICE" = "mido" ] || [ "$DEVICE" = "tiffany" ] || [ "$DEVICE" = "tissot" ]; then
     # Hax for cam configs
     CAMERA2_SENSOR_MODULES="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary/vendor/lib/libmmcamera2_sensor_modules.so
     sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
