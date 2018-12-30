@@ -38,7 +38,8 @@ public class DozeService extends Service {
         mProximitySensor = new ProximitySensor(this);
         mTiltSensor = new TiltSensor(this);
 
-        IntentFilter screenStateFilter = new IntentFilter(Intent.ACTION_SCREEN_ON);
+	IntentFilter screenStateFilter = new IntentFilter();
+        screenStateFilter.addAction(Intent.ACTION_SCREEN_ON);
         screenStateFilter.addAction(Intent.ACTION_SCREEN_OFF);
         registerReceiver(mScreenStateReceiver, screenStateFilter);
     }
@@ -65,22 +66,22 @@ public class DozeService extends Service {
 
     private void onDisplayOn() {
         if (DEBUG) Log.d(TAG, "Display on");
-        if (Utils.pickUpEnabled(this)) {
-            mTiltSensor.disable();
+        if (DozeUtils.isPickUpEnabled(this)) {
+            mPickupSensor.disable();
         }
-        if (Utils.handwaveGestureEnabled(this) ||
-                Utils.pocketGestureEnabled(this)) {
+        if (DozeUtils.isHandwaveGestureEnabled(this) ||
+                DozeUtils.isPocketGestureEnabled(this)) {
             mProximitySensor.disable();
         }
     }
 
     private void onDisplayOff() {
         if (DEBUG) Log.d(TAG, "Display off");
-        if (Utils.pickUpEnabled(this)) {
-            mTiltSensor.enable();
+        if (DozeUtils.isPickUpEnabled(this)) {
+            mPickupSensor.enable();
         }
-        if (Utils.handwaveGestureEnabled(this) ||
-                Utils.pocketGestureEnabled(this)) {
+        if (DozeUtils.isHandwaveGestureEnabled(this) ||
+                DozeUtils.isPocketGestureEnabled(this)) {
             mProximitySensor.enable();
         }
     }
