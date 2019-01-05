@@ -318,7 +318,6 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
-    init.msm.usb.configfs.rc \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.rc \
@@ -326,6 +325,11 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.target.rc \
     ueventd.qcom.rc
+
+ifeq ($(TARGET_KERNEL_VERSION),4.9)
+PRODUCT_PACKAGES += \
+    init.msm.usb.configfs.rc
+endif
 
 # RCS
 PRODUCT_PACKAGES += \
