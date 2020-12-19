@@ -56,6 +56,9 @@ ro.bluetooth.hfp.ver=1.7
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
+camera.display.lmax=1280x720 \
+camera.display.umax=1920x1080 \
+camera.lowpower.record.enable=1 \
 media.camera.ts.monotonic=1 \
 persist.camera.mct.debug=0 \
 persist.camera.iface.logs=0 \
@@ -64,9 +67,6 @@ persist.camera.isp.clock.optmz=0 \
 persist.camera.isp.debug=0 \
 persist.camera.sensor.debug=0 \
 persist.camera.stats.test=5 \
-persist.vendor.camera.display.lmax=1280x720 \
-persist.vendor.camera.display.umax=1920x1080 \
-vendor.camera.lowpower.record.enable=1 \
 vidc.enc.dcvs.extra-buff-count=2
 
 # Cne
