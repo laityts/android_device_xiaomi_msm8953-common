@@ -1,5 +1,6 @@
 allow init wcnss_device:chr_file write;
 allow init sysfs:file setattr;
+allow init vendor_file:file { execute };
 
 allow qti_init_shell {
     fm_prop

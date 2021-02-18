@@ -1,5 +1,11 @@
 allow platform_app system_app_data_file:dir getattr;
 allow platform_app app_data_file:file rx_file_perms;
 allow platform_app hal_alarm_qti_default:binder call;
+allow platform_app sysfs_kgsl:dir { search };
+
+# Face Unlock
+get_prop(platform_app, camera_prop)
+
+# FPS
 allow platform_app sysfs_fps:file { getattr open read };
 allow platform_app sysfs_graphics:dir search;
