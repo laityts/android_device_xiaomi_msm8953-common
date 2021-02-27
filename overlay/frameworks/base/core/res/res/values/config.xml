@@ -511,5 +511,9 @@
     <bool name="config_ignoreRSSNRsignallevel">true</bool>
 
     <!-- Allow automatic adjusting of the screen brightness while dozing in low power state. -->
-    <bool name="Allowautobrightnesswhiledozing">true</bool>
+	<bool name="Allowautobrightnesswhiledozing">true</bool>
+
+    <!-- Should we vibrate on an icon animation of the shelf. This should only be active if the
+     vibrator is capable of subtle vibrations -->
+    <bool name="config_vibrateOnIconAnimation">true</bool>
 </resources>
