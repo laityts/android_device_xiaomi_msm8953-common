@@ -58,6 +58,10 @@ ro.bluetooth.hfp.ver=1.7
 PRODUCT_PROPERTY_OVERRIDES += \
 ro.kernel.ebpf.supported=true
 
+# Blur
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.sys.sf.disable_blurs=1
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
 camera.display.lmax=1280x720 \
